@@ -1,9 +1,9 @@
 # Active Directory Home Lab
 
-An Active Directory Domain Services (AD DS) environment inside of VMware Workstation Pro 17.
-This project starts with a Windows Server 2022 VM in which things such as basic Users, Groups, and Organisational Units (OU) are configured.
+This is a homelab project of an Active Directory Domain Services (AD DS) environment inside of VMware Workstation Pro 17.
+This project starts with a Windows Server 2022 VM with AD DS installed in which things such as basic Users, Groups, and Organisational Units (OU) are configured.
 
-The completed project then moves on to set up a client machine and uses PowerShell scripting to configure over 1000 users.
+The completed project then moves on to set up a client machine and uses PowerShell scripts to configure over 1000 users.
 
 ![Starter Project Diagram](./assets/starter_project_diagram.png)
 
@@ -83,6 +83,18 @@ Within the server manager dashboard, select `Add roles and features` to start in
 
 ![Server Manager Dashboard](./assets/server_manager_dashboard.png)
 
+Select `Role-based or feature-based installation > Select a server from the server pool (and select the PC currently in use)` and ensure the checkbox for `Active Directory Domain Services` is selected.
+
+![Installing Active Directory](./assets/installing_ad.png)
+
+Continue to select the defaults and complete the installation. Successful installation is pictured below.
+
+![Successful AD Install](./assets/successful_ad_install.png)
+
+From here, the server needs to be promoted to a domain controller. Open the notification flag in the top right hand side of the toolbar and select `Promote this server to a domain controller`.
+
+![Promote to domain controller notification](./assets/post_install_notification.png)
+
 #### Create user objects
 
 In AD DS, you must provide all users that require access to network resources with a user account.
@@ -91,7 +103,7 @@ In Windows Server, a user account is an object that contains all the information
 
 - The username.
 - A user password.
-- Group memberships.
+- Group memberships. [1](https://learn.microsoft.com/en-us/training/)
 
 ## Known Issues
 
