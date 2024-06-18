@@ -15,11 +15,13 @@ The starter project runs inside VMware Workstation Pro 17. This was recently mad
 
 Windows Server 2022 is run as a virtual machine within VMware and will also be configured to have a network connection.
 
+Starter is a WIP.
+
 ### Complete
 
 Complete is a WIP.
 
-## Initial Setup
+## Initial VMware Setup
 
 ### Prerequisites
 
@@ -29,23 +31,41 @@ The Windows Server 2022 ISO file can be downloaded from [here](https://www.micro
 
 ### Configuring the Virtual Machine
 
-Initial load of VMware should provide you with some options. Select Create New Virtual Machine.
+Load VMware and select `Create New Virtual Machine`.
 
 ![VMware Start Screen](./assets/vmware_start.png)
 
-A setup wizard will appear and confirm the type of installation. Typical is the default and what will be selected.
+Select the default (typical) from the setup wizard.
 
 ![VMware Setup Wizard](./assets/vm_config_1.png)
 
-Once the `.ISO` file has been selected, a prompt will ask for a product key. And some extra information.
+Once the `.ISO` file has been selected, a prompt will ask for a product key. A product key can be ommited to make use of the 180 day trial.
 
-A product key can be ommited to make use of the 180 day trial.
+Keep the version as Datacenter to install the data centre version of Windows Server 2022.
 
-The version can be kept as Datacenter. This will install the data centre version and a GUI to use with the server.
-
-A basic demo admin account is also created.
+Accept and create a local administrator account.
 
 ![Easy Install Information](./assets/vm_config_2.png)
+
+Continue to follow the prompts on the screen and make sure to select the Datacenter Evaluation (Desktop Experience) to install a desktop environment.
+
+![Installing the correct server experience](./assets/vm_config_3.png)
+
+Follow the remaining prompts and restart the system once the install has finished to reach the desktop. Accept the network connection so the VM can access the internet.
+
+![Initial boot](./assets/vm_config_4.png)
+
+After the initial boot, it is good practice to fully update the system to receive the latest features and security patches. Once installed, restart and the system should be ready.
+
+![Updating system post install](./assets/vm_config_5.png)
+
+From here, create a VMware snapshot to revert back to if any errors are made.
+
+## Starter Project
+
+### Active Directory Basics
+
+Here I will complete some basic actions in Active Directory.
 
 ## Known Issues
 
@@ -53,4 +73,6 @@ A basic demo admin account is also created.
 
 ## Additional Resources
 
-Microsoft's training platform [Learn](https://learn.microsoft.com/en-us/training/) has a module focused on [AD DS](https://learn.microsoft.com/en-us/training/).
+- Microsoft's training platform [Learn](https://learn.microsoft.com/en-us/training/) has a module focused on [AD DS](https://learn.microsoft.com/en-us/training/).
+
+- Jon Good [Windows Server with VMware](https://youtu.be/II-a79HFQtQ?si=WNRtZwhiH6w9uKkJ)
