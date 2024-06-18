@@ -61,11 +61,37 @@ After the initial boot, it is good practice to fully update the system to receiv
 
 From here, create a VMware snapshot to revert back to if any errors are made.
 
+### Renaming Network Interface
+
+This will be helpful for the complete project to identify different NIC's.
+
+Select the `Network Internet Access` from the dashboard on the bottom right hand side of the Windows Taskbar and enter the `Network and Internet Settings` menu.
+
+![Network Internet Access Menu](./assets/network_internet_access.png)
+
+Select `Change Adapter Options` to view all NIC's.
+
+On the Ethernet NIC, `Right Click > Rename` and name it something distinct to make it easy to identify.
+
+![Renaming NIC](./assets/rename_nic.png)
+
 ## Starter Project
 
-### Active Directory Basics
+### Installing Active Directory Domain Services
 
-Here I will complete some basic actions in Active Directory.
+Within the server manager dashboard, select `Add roles and features` to start installing active directory.
+
+![Server Manager Dashboard](./assets/server_manager_dashboard.png)
+
+#### Create user objects
+
+In AD DS, you must provide all users that require access to network resources with a user account.
+
+In Windows Server, a user account is an object that contains all the information that defines a user. A user account includes:
+
+- The username.
+- A user password.
+- Group memberships.
 
 ## Known Issues
 
