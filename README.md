@@ -3,7 +3,7 @@
 This is a homelab project of an Active Directory Domain Services (AD DS) environment inside of VMware Workstation Pro 17.
 This project starts with a Windows Server 2022 VM with AD DS installed in which things such as basic Users, Groups, and Organisational Units (OU) are configured.
 
-The completed project then moves on to set up a client machine and uses PowerShell scripts to configure over 1000 users.
+<!-- The completed project then moves on to set up a client machine and uses PowerShell scripts to configure over 1000 users. -->
 
 ![Starter Project Diagram](./assets/starter_project_diagram.png)
 
@@ -17,9 +17,9 @@ Windows Server 2022 is run as a virtual machine within VMware and will also be c
 
 Starter is a WIP.
 
-### Complete
+<!-- ### Complete
 
-Complete is a WIP.
+Complete is a WIP. -->
 
 ## Initial VMware Setup
 
@@ -63,7 +63,7 @@ From here, create a VMware snapshot to revert back to if any errors are made.
 
 ### Renaming Network Interface
 
-This will be helpful for the complete project to identify different NIC's.
+This will be helpful in the future when expanding the project to identify different NIC's.
 
 Select the `Network Internet Access` from the dashboard on the bottom right hand side of the Windows Taskbar and enter the `Network and Internet Settings` menu.
 
@@ -91,19 +91,25 @@ Continue to select the defaults and complete the installation. Successful instal
 
 ![Successful AD Install](./assets/successful_ad_install.png)
 
+### Domain Controller and AD Forest Configuration
+
 From here, the server needs to be promoted to a domain controller. Open the notification flag in the top right hand side of the toolbar and select `Promote this server to a domain controller`.
 
 ![Promote to domain controller notification](./assets/post_install_notification.png)
 
-#### Create user objects
+From here a new `Forest` can be created. A `Forest` is the top-level container that holds one or more AD domains. A root domain name should be specified. Sub-domains can be configured later.
 
-In AD DS, you must provide all users that require access to network resources with a user account.
+![Adding a new forest](./assets/add_new_forest.png)
 
-In Windows Server, a user account is an object that contains all the information that defines a user. A user account includes:
+![Set a password for the forest](./assets/forest_password.png)
 
-- The username.
-- A user password.
-- Group memberships. [1](https://learn.microsoft.com/en-us/training/)
+![Forest NetBIOS name](./assets/netbios.png)
+
+After a reboot, the login screen should display a prompt for the newly created domain.
+
+![Logging into the new domain](./assets/forest_login.png)
+
+### Configuring Organisational Units, Users and Groups
 
 ## Known Issues
 
